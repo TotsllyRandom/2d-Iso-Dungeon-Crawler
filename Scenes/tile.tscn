@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://y20ybyittj1o"]
+
+[ext_resource type="Texture2D" uid="uid://bf28k0xmykxac" path="res://Assets/Tiles/test.png" id="1_xsjyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvq8p"]
+atlas = ExtResource("1_xsjyq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsjyq"]
+atlas = ExtResource("1_xsjyq")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kj4d"]
+atlas = ExtResource("1_xsjyq")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khers"]
+atlas = ExtResource("1_xsjyq")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjkyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvq8p")
+}],
+"loop": 1,
+"name": &"test_block_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsjyq")
+}],
+"loop": 1,
+"name": &"test_block_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kj4d")
+}],
+"loop": 2,
+"name": &"test_slopeL",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khers")
+}],
+"loop": 1,
+"name": &"test_slopeR",
+"speed": 5.0
+}]
+
+[node name="Tile" type="AnimatedSprite2D" unique_id=1628945190]
+sprite_frames = SubResource("SpriteFrames_cjkyl")
+animation = &"test_block_2"

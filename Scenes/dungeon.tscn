@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bj7vbh6cpqfhk"]
+
+[ext_resource type="Script" uid="uid://gaaugntt7qfh" path="res://scripts/tilemap.gd" id="1_oavya"]
+[ext_resource type="PackedScene" uid="uid://y20ybyittj1o" path="res://Scenes/tile.tscn" id="2_dakn4"]
+
+[node name="Dungeon" type="Node2D" unique_id=1384526358]
+
+[node name="Tiles" type="Node2D" parent="." unique_id=1283936478]
+script = ExtResource("1_oavya")
+
+[node name="Tile2" parent="Tiles" unique_id=1628945190 instance=ExtResource("2_dakn4")]
+position = Vector2(-16, -8)
+animation = &"test_slopeL"
+
+[node name="Tile" parent="Tiles" unique_id=1187753546 instance=ExtResource("2_dakn4")]
+animation = &"test_block_1"
