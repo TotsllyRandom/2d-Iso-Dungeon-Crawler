@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://dvu0txsl2yiqe" path="res://scripts/player.gd" id="1_88kja"]
 [ext_resource type="Texture2D" uid="uid://hqa8k6lledjx" path="res://icon.svg" id="2_it8n0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_cjkyl"]
-radius = 64.070274
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_rfg2h"]
 animations = [{
 "frames": [{
@@ -17,12 +14,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2001088589]
-script = ExtResource("1_88kja")
+[sub_resource type="CircleShape2D" id="CircleShape2D_rfg2h"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2032257792]
-shape = SubResource("CircleShape2D_cjkyl")
+[node name="Player" type="CharacterBody2D" unique_id=2001088589]
+script = ExtResource("1_88kja")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=35724749]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_rfg2h")
+
+[node name="Collisions" type="Area2D" parent="." unique_id=1655546060]
+position = Vector2(0, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions" unique_id=249537811]
+shape = SubResource("CircleShape2D_rfg2h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1795876268]
+position = Vector2(0, 48)
+shape = SubResource("CircleShape2D_rfg2h")
+disabled = true
+
+[connection signal="area_entered" from="Collisions" to="." method="_on_collisions_entered"]
+[connection signal="area_exited" from="Collisions" to="." method="_on_collisions_exited"]
+[connection signal="body_entered" from="Collisions" to="." method="_on_collisions_body_entered"]
+[connection signal="body_exited" from="Collisions" to="." method="_on_collisions_body_exited"]

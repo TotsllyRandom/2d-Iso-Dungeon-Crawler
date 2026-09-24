@@ -12,7 +12,7 @@ tile_set = ExtResource("1_oavya")
 
 [node name="CharacterBody2D" parent="." unique_id=2001088589 instance=ExtResource("2_dakn4")]
 position = Vector2(-63.999996, 38.999996)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.1, 0.1)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=180129916]
-zoom = Vector2(5, 5)
+zoom = Vector2(7, 7)
