@@ -5,16 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bt1cxnql11h83" path="res://Assets/Tiles/InvisWallTiles.png" id="3_mjsus"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_mjsus"]
-tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 1, 393216, 0, 65537, 65536, 0, 131073, 65536, 0, 196609, 65536, 0, 262145, 65536, 0, 262146, 1, 0)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_df8cf"]
-tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 1, 196608, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 196610, 1, 0)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_lv8wk"]
-tile_data = PackedInt32Array(65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 262144, 1, 0, 327680, 1, 0, 393216, 1, 0, 458752, 1, 0, 1, 1, 0, 65537, 65536, 0, 131073, 65536, 0, 196609, 65536, 0, 262145, 196608, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 524289, 1, 0, 2, 65536, 0, 65538, 65536, 0, 131074, 65536, 0, 196610, 65536, 0, 262146, 196608, 0, 327682, 0, 0, 393218, 0, 0, 458754, 0, 0, 524290, 0, 0, 3, 1, 0, 65539, 65536, 0, 131075, 65536, 0, 196611, 65536, 0, 262147, 196608, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_p1pe8"]
-tile_data = PackedInt32Array(65536, 1, 0, 131072, 1, 0, 196608, 1, 0, 1, 1, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 2, 0, 0, 65538, 0, 0, 131074, 0, 0, 196610, 0, 0, 3, 1, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0)
+tile_data = PackedInt32Array(65536, 65540, 0, 131072, 65540, 0, 196608, 65540, 0, 262144, 65536, 0, 327680, 65540, 0, 393216, 65540, 0, 458752, 65540, 0, 1, 65540, 0, 65537, 65536, 0, 131073, 65536, 0, 196609, 65536, 0, 262145, 65536, 0, 327681, 65536, 0, 393217, 65536, 0, 458753, 65536, 0, 524289, 65540, 0, 2, 65540, 0, 65538, 65536, 0, 131074, 65536, 0, 196610, 65536, 0, 262146, 65536, 0, 327682, 65536, 0, 393218, 65536, 0, 458754, 65536, 0, 524290, 65540, 0, 3, 65540, 0, 65539, 65536, 0, 131075, 65536, 0, 196611, 65536, 0, 262147, 65536, 0, 327683, 65536, 0, 393219, 65536, 0, 458755, 65536, 0, 524291, 65540, 0, 4, 65536, 0, 65540, 65536, 0, 131076, 65536, 0, 196612, 65536, 0, 262148, 65536, 0, 327684, 65536, 0, 393220, 65536, 0, 458756, 65536, 0, 524292, 65536, 0, 5, 65540, 0, 65541, 65536, 0, 131077, 65536, 0, 196613, 65536, 0, 262149, 65536, 0, 327685, 262144, 0, 393221, 131072, 0, 458757, 131072, 0, 524293, 131076, 0, 6, 65540, 0, 65542, 65536, 0, 131078, 65536, 0, 196614, 65536, 0, 262150, 65536, 0, 327686, 196608, 0, 393222, 0, 0, 458758, 0, 0, 524294, 4, 0, 7, 65540, 0, 65543, 65536, 0, 131079, 65536, 0, 196615, 65536, 0, 262151, 65536, 0, 327687, 196608, 0, 393223, 0, 0, 458759, 0, 0, 524295, 4, 0, 65544, 65540, 0, 131080, 65540, 0, 196616, 65540, 0, 262152, 65536, 0, 327688, 196612, 0, 393224, 4, 0, 458760, 4, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dakn4"]
 resource_name = "Test Terrain"
@@ -92,12 +83,16 @@ texture_region_size = Vector2i(32, 32)
 9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -1, 16, -1, 16, -0.5, 0, 8, -16, -0.5, -16, -1)
 10:0/0 = 0
 10:0/0/texture_origin = Vector2i(0, -5)
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, 16, 0, 0, 8, -16, 8)
 11:0/0 = 0
 11:0/0/texture_origin = Vector2i(0, -5)
+11:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -8, -16, 0, 0, 8, 16, 8)
 12:0/0 = 0
 12:0/0/texture_origin = Vector2i(0, -5)
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1, 0, 16, 0, -1, 16, -16, 8)
 13:0/0 = 0
 13:0/0/texture_origin = Vector2i(0, -5)
+13:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1, 0, -16, 0, 1, 16, 16, 8)
 
 [resource]
 tile_shape = 1
@@ -108,6 +103,3 @@ sources/0 = SubResource("TileSetAtlasSource_dakn4")
 sources/1 = SubResource("TileSetAtlasSource_07eon")
 sources/4 = SubResource("TileSetAtlasSource_df8cf")
 pattern_0 = SubResource("TileMapPattern_mjsus")
-pattern_1 = SubResource("TileMapPattern_df8cf")
-pattern_2 = SubResource("TileMapPattern_lv8wk")
-pattern_3 = SubResource("TileMapPattern_p1pe8")
