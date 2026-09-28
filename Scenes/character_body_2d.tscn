@@ -20,10 +20,19 @@ radius = 17.0
 [node name="Player" type="CharacterBody2D" unique_id=2001088589]
 script = ExtResource("1_88kja")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=35724749]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=35724749]
 y_sort_enabled = true
+scale = Vector2(0.25, 1)
 sprite_frames = SubResource("SpriteFrames_rfg2h")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1795876268]
+[node name="Collisions" type="CollisionShape2D" parent="." unique_id=1795876268]
+position = Vector2(0, 48)
+shape = SubResource("CircleShape2D_rfg2h")
+
+[node name="TileSlopes" type="Area2D" parent="." unique_id=1691666265]
+collision_layer = 0
+collision_mask = 240
+
+[node name="Detect" type="CollisionShape2D" parent="TileSlopes" unique_id=1330281168]
 position = Vector2(0, 48)
 shape = SubResource("CircleShape2D_rfg2h")
