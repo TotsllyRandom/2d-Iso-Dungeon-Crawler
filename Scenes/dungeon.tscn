@@ -1,19 +1,28 @@
 [gd_scene format=4 uid="uid://bj7vbh6cpqfhk"]
 
+[ext_resource type="Script" uid="uid://gaaugntt7qfh" path="res://scripts/tilemap.gd" id="1_lt7kh"]
 [ext_resource type="TileSet" uid="uid://bcm2jywnxg0cr" path="res://Assets/Resources/TestTileSet.tres" id="1_oavya"]
 [ext_resource type="PackedScene" uid="uid://4erouy7s8j5q" path="res://Scenes/character_body_2d.tscn" id="2_dakn4"]
 
 [node name="Dungeon" type="Node2D" unique_id=1384526358]
+script = ExtResource("1_lt7kh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1364122093]
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.1764706, 0.16862746, 0.16078432, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=879939894]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD+////AgAAAAAAAAD+/wAAAgAAAAAAAAD+/wEAAgAAAAAAAAD+/wIAAgAIAAAAAAD+/wMAAgAHAAAAAAD+/wQAAgAMAAAAAAD+/wUAAgAAAAAAAAD+/wYAAgAAAAAAAAD/////AgAAAAAAAAD//wAAAgAAAAAAAAD//wEAAgAAAAAAAAD//wIAAgAGAAAAAAD//wMAAgABAAAAAAD//wQAAgAKAAAAAAD//wUAAgAHAAAAAAD//wYAAgAMAAAAAAAAAP//AgAAAAAAAAAAAAAAAgAAAAAAAAAAAAEAAgAIAAAAAAAAAAIAAgAJAAAAAAAAAAMAAgABAAAAAAAAAAQAAgABAAAAAAAAAAUAAgABAAAAAAAAAAYAAgADAAAAAAABAP//AgAIAAAAAAABAAAAAgAHAAAAAAABAAEAAgAJAAAAAAABAAIAAgAEAAAAAAABAAMAAgACAAAAAAABAAQAAgACAAAAAAABAAUAAgACAAAAAAABAAYAAgAFAAAAAAACAP//AgAGAAAAAAACAAAAAgABAAAAAAACAAEAAgABAAAAAAACAAIAAgADAAAAAAACAAMAAgAAAAAAAAACAAQAAgAAAAAAAAACAAUAAgAAAAAAAAACAAYAAgAAAAAAAAADAP//AgANAAAAAAADAAAAAgALAAAAAAADAAEAAgABAAAAAAADAAIAAgADAAAAAAADAAMAAgAAAAAAAAADAAQAAgAAAAAAAAADAAUAAgAAAAAAAAADAAYAAgAAAAAAAAAEAP//AgAAAAAAAAAEAAAAAgAGAAAAAAAEAAEAAgABAAAAAAAEAAIAAgADAAAAAAAEAAMAAgAAAAAAAAAEAAQAAgAAAAAAAAAEAAUAAgAIAAAAAAAEAAYAAgAHAAAAAAAFAP//AgAAAAAAAAAFAAAAAgANAAAAAAAFAAEAAgACAAAAAAAFAAIAAgAFAAAAAAAFAAMAAgAAAAAAAAAFAAQAAgAAAAAAAAAFAAUAAgAGAAAAAAAFAAYAAgABAAAAAAA=")
+tile_map_data = PackedByteArray("AAD+////AAABAAAAAAD+/wAAAAABAAAAAAD+/wEAAAABAAAAAAD/////AAABAAAAAAD//wAAAAABAAAAAAD//wEAAAABAAAAAAAAAP//AAABAAAAAAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAA=")
 tile_set = ExtResource("1_oavya")
 
-[node name="CharacterBody2D" parent="." unique_id=2001088589 instance=ExtResource("2_dakn4")]
-visible = false
+[node name="Player" parent="." unique_id=2001088589 instance=ExtResource("2_dakn4")]
 position = Vector2(0, 53.999996)
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.15, 0.15)
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=180129916]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=180129916]
 zoom = Vector2(7, 7)

@@ -1,38 +1,75 @@
 [gd_scene format=3 uid="uid://4erouy7s8j5q"]
 
 [ext_resource type="Script" uid="uid://dvu0txsl2yiqe" path="res://scripts/player.gd" id="1_88kja"]
-[ext_resource type="Texture2D" uid="uid://hqa8k6lledjx" path="res://icon.svg" id="2_it8n0"]
+[ext_resource type="Texture2D" uid="uid://wi0k7xr36hqi" path="res://Assets/Player.png" id="2_88kja"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rfg2h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_it8n0")
+"texture": ExtResource("2_88kja")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nccm0"]
+radius = 11.0
+height = 46.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_rfg2h"]
-radius = 17.0
+radius = 24.738634
 
 [node name="Player" type="CharacterBody2D" unique_id=2001088589]
 script = ExtResource("1_88kja")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=35724749]
 y_sort_enabled = true
-scale = Vector2(0.25, 1)
+position = Vector2(0, -50)
+scale = Vector2(1.78125, 1.734375)
 sprite_frames = SubResource("SpriteFrames_rfg2h")
 
 [node name="Collisions" type="CollisionShape2D" parent="." unique_id=1795876268]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nccm0")
+
+[node name="TileSlopes1" type="Area2D" parent="." unique_id=1691666265]
+visible = false
+position = Vector2(0, -48)
+collision_layer = 0
+collision_mask = 16
+
+[node name="Detect" type="CollisionShape2D" parent="TileSlopes1" unique_id=1330281168]
 position = Vector2(0, 48)
 shape = SubResource("CircleShape2D_rfg2h")
 
-[node name="TileSlopes" type="Area2D" parent="." unique_id=1691666265]
+[node name="TileSlopes2" type="Area2D" parent="." unique_id=2087564602]
+visible = false
+position = Vector2(0, -48)
 collision_layer = 0
-collision_mask = 240
+collision_mask = 32
 
-[node name="Detect" type="CollisionShape2D" parent="TileSlopes" unique_id=1330281168]
+[node name="Detect" type="CollisionShape2D" parent="TileSlopes2" unique_id=1452660076]
+position = Vector2(0, 48)
+shape = SubResource("CircleShape2D_rfg2h")
+
+[node name="TileSlopes3" type="Area2D" parent="." unique_id=1096663634]
+visible = false
+position = Vector2(0, -48)
+collision_layer = 0
+collision_mask = 64
+
+[node name="Detect" type="CollisionShape2D" parent="TileSlopes3" unique_id=1837892283]
+position = Vector2(0, 48)
+shape = SubResource("CircleShape2D_rfg2h")
+
+[node name="TileSlopes4" type="Area2D" parent="." unique_id=59877104]
+visible = false
+position = Vector2(0, -48)
+collision_layer = 0
+collision_mask = 128
+
+[node name="Detect" type="CollisionShape2D" parent="TileSlopes4" unique_id=2051574859]
 position = Vector2(0, 48)
 shape = SubResource("CircleShape2D_rfg2h")
