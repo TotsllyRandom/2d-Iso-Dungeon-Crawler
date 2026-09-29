@@ -47,23 +47,28 @@ func _physics_process(_delta: float) -> void:
 		dir[0] += 1
 		dir[1] += 1
 	
+	dir[0] = clamp(dir[0],-1,1)
+	dir[1] = clamp(dir[1],-1,1)
+	if dir[0] == 0 || dir[1] == 0:
+		dir = [0,0]
 	if inputX == dir[1] && inputY==dir[0] || inputX == 0-dir[1] && inputY==0-dir[0]:
 		if dir[0] == -1:
 			movement.y = abs(movement.x) * inputY
 		else:
 			movement.y = 0
 	else:
-		if inputX == 0:
-			if inputY == dir[0]:
-				movement.x += dir[1] * abs(movement.y * 2) / 1.8
-			else:
-				movement.x += (-dir[1]) * abs(movement.y * 2) / 1.8
+		if inputX == 0 && dir[1]!=0:
+			var s = dir[1]
+			if inputY == -(dir[0]):
+				s = -(dir[1])
+			movement.x += s * abs(movement.y) / 1.8
 			
-		if inputY == 0:
-			if inputX == dir[1]:
-				movement.y += dir[0] * abs(movement.x) / 1.8
-			else:
-				movement.y += (-dir[0]) * abs(movement.x) / 1.8
+		if inputY == 0 && dir[0]!=0:
+			var s = dir[0]
+			if inputX == -(dir[1]):
+				s = -(dir[0])
+			movement.y += s * abs(movement.x) / 1.8
+		print(str(dir) + " " + str(movement))
 			
 	
 	
