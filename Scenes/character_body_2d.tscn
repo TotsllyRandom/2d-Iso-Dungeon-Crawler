@@ -18,9 +18,6 @@ animations = [{
 radius = 11.0
 height = 46.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rfg2h"]
-radius = 24.738634
-
 [node name="Player" type="CharacterBody2D" unique_id=2001088589]
 script = ExtResource("1_88kja")
 
@@ -35,41 +32,41 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes1" type="Area2D" parent="." unique_id=1691666265]
-visible = false
 position = Vector2(0, -48)
 collision_layer = 0
 collision_mask = 16
 
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes1" unique_id=1330281168]
 position = Vector2(0, 48)
-shape = SubResource("CircleShape2D_rfg2h")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes2" type="Area2D" parent="." unique_id=2087564602]
-visible = false
 position = Vector2(0, -48)
 collision_layer = 0
 collision_mask = 32
 
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes2" unique_id=1452660076]
 position = Vector2(0, 48)
-shape = SubResource("CircleShape2D_rfg2h")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes3" type="Area2D" parent="." unique_id=1096663634]
-visible = false
 position = Vector2(0, -48)
 collision_layer = 0
 collision_mask = 64
 
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes3" unique_id=1837892283]
 position = Vector2(0, 48)
-shape = SubResource("CircleShape2D_rfg2h")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes4" type="Area2D" parent="." unique_id=59877104]
-visible = false
 position = Vector2(0, -48)
 collision_layer = 0
 collision_mask = 128
 
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes4" unique_id=2051574859]
 position = Vector2(0, 48)
-shape = SubResource("CircleShape2D_rfg2h")
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nccm0")
