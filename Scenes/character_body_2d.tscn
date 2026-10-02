@@ -29,7 +29,7 @@ sprite_frames = SubResource("SpriteFrames_rfg2h")
 
 [node name="Collisions" type="CollisionShape2D" parent="." unique_id=1795876268]
 rotation = 1.5707964
-scale = Vector2(0.16000131, -0.04000002)
+scale = Vector2(0.55316937, 0.6088658)
 shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes1" type="Area2D" parent="." unique_id=1691666265]
@@ -40,7 +40,7 @@ collision_mask = 16
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes1" unique_id=1330281168]
 position = Vector2(0, 48)
 rotation = 1.5707964
-scale = Vector2(0.16000137, -0.04000002)
+scale = Vector2(0.81226736, 0.60886556)
 shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes2" type="Area2D" parent="." unique_id=2087564602]
@@ -51,7 +51,7 @@ collision_mask = 32
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes2" unique_id=1452660076]
 position = Vector2(0, 48)
 rotation = 1.5707964
-scale = Vector2(0.16000137, -0.04000002)
+scale = Vector2(0.81226736, 0.60886556)
 shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes3" type="Area2D" parent="." unique_id=1096663634]
@@ -62,7 +62,7 @@ collision_mask = 64
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes3" unique_id=1837892283]
 position = Vector2(0, 48)
 rotation = 1.5707964
-scale = Vector2(0.16000137, -0.04000002)
+scale = Vector2(0.81226736, 0.60886556)
 shape = SubResource("CapsuleShape2D_nccm0")
 
 [node name="TileSlopes4" type="Area2D" parent="." unique_id=59877104]
@@ -73,5 +73,5 @@ collision_mask = 128
 [node name="Detect" type="CollisionShape2D" parent="TileSlopes4" unique_id=2051574859]
 position = Vector2(0, 48)
 rotation = 1.5707964
-scale = Vector2(0.16000137, -0.04000002)
+scale = Vector2(0.81226736, 0.60886556)
 shape = SubResource("CapsuleShape2D_nccm0")
