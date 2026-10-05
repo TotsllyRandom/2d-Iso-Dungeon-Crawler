@@ -138,7 +138,7 @@ func find_room_by_cord(x:int,y:int) -> int:
 			return i
 	return -1
 	
-func make_room(x:int, y:int, strand:=0):
+func make_room(x:int, y:int, strand:=0, type:String="none"):
 	var max_strand_length := 5
 	#if strand == max_strand_length:
 		#pass
@@ -193,7 +193,7 @@ func make_room(x:int, y:int, strand:=0):
 			
 		var next_room = find_room_by_cord(nx,ny)
 		if next_room == -1:
-			rooms.append({"doors":[-1,-1,-1,-1,],"cords":Vector2i(nx,ny),"made":false, "type":"none"})
+			rooms.append({"doors":[-1,-1,-1,-1,],"cords":Vector2i(nx,ny),"made":false, "type":type})
 		
 		if room["doors"][door] == 0:
 			rooms[find_room_by_cord(nx,ny)]["doors"][new_door] = 0
@@ -222,7 +222,13 @@ func make_room(x:int, y:int, strand:=0):
 			room["doors"][door] = 0
 		if room["doors"][door] == 1:
 			room["doors"][door] = 2
-			make_room(nx,ny,strand + 1)
+			if room["type"] == "room":
+				if randi_range(0,1) == 1:
+					make_room(nx,ny,strand + 1,"none")
+				else:
+					make_room(nx,ny,strand + 1,"hall")
+			else:
+				make_room(nx,ny,strand + 1,"room")
 	rooms[find_room_by_cord(x,y)] = room
 	if strand == 0:
 		print(rooms)

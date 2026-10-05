@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cvvtn5rhk83ts"]
+
+[ext_resource type="Theme" uid="uid://brp0e8pb2rcvs" path="res://Assets/Resources/default.tres" id="1_0pnxq"]
+
+[node name="DungeonEnd" type="Control" unique_id=1804538033]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="." unique_id=495223870]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="BG" unique_id=1775471780]
+layout_mode = 1
+anchor_top = 0.625
+anchor_right = 1.0
+anchor_bottom = 0.875
+offset_left = 216.0
+offset_right = -216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ReturnToCity" type="Button" parent="BG/Control" unique_id=1009167820]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -275.0
+offset_top = -48.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("1_0pnxq")
+text = "RETURN TO THE CITY"
+flat = true
+
+[node name="NextSector" type="Button" parent="BG/Control" unique_id=650434021]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -48.0
+offset_right = 275.0
+grow_vertical = 0
+theme = ExtResource("1_0pnxq")
+text = "CONTINUE TO SECTOR
+"
+flat = true

@@ -263,8 +263,9 @@ const ROOMS = [
 	
 ]
 
-func choose_room(doors:Array, type:String):
+func choose_room(doors:Array, type:String, purpose:String = ""):
 	var avaliable := []
+	
 	if not (doors.has(1) or doors.has(2)):
 		return 0
 	for i in range(len(ROOMS)):
@@ -275,6 +276,8 @@ func choose_room(doors:Array, type:String):
 			str(ROOMS[i]["required"][3]) == str(doors[3]) || str(ROOMS[i]["required"][3]) == "X",
 			str(ROOMS[i]["type"]) == type,
 			]
+		if purpose != "":
+			check.append((ROOMS[i].get("purpose")==purpose))
 		if not check.has(false):
 			avaliable.append(i)
 	if len(avaliable) == 0:
