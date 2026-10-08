@@ -72,9 +72,9 @@ func _physics_process(_delta: float) -> void:
 			
 	
 	
-	if movement.x > 0:
+	"""if movement.x > 0:
 		$Sprite.flip_h = false
 	if movement.x < 0:
-		$Sprite.flip_h = true
+		$Sprite.flip_h = true"""
 	velocity = movement
 	move_and_slide()

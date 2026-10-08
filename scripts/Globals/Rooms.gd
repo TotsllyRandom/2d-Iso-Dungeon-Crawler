@@ -281,6 +281,8 @@ func choose_room(doors:Array, type:String, purpose:String = ""):
 		if not check.has(false):
 			avaliable.append(i)
 	if len(avaliable) == 0:
+		if type == "hall":
+			return choose_room(doors,"room")
 		return 1
 	return avaliable[randi_range(0,len(avaliable)-1)]
 
