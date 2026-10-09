@@ -19,7 +19,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Reset"):
-		make_tile_map()
+		var error = get_tree().change_scene_to_file("res://Scenes/dungeon_end.tscn")
+	
+		if error != OK:
+			print("Failed to load scene: ", error)
 	$ColorRect.size = get_viewport_rect().size
 	$ColorRect.position = $Player.position
 	$ColorRect.position = Vector2(

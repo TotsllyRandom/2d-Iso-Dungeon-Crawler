@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cvvtn5rhk83ts"]
 
 [ext_resource type="Theme" uid="uid://brp0e8pb2rcvs" path="res://Assets/Resources/default.tres" id="1_0pnxq"]
+[ext_resource type="Script" uid="uid://cl65lqvmkfem8" path="res://scripts/dungeonEndScreen.gd" id="1_he33l"]
 
 [node name="DungeonEnd" type="Control" unique_id=1804538033]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_he33l")
 
 [node name="BG" type="Panel" parent="." unique_id=495223870]
 layout_mode = 1
@@ -28,29 +30,113 @@ offset_right = -216.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ReturnToCity" type="Button" parent="BG/Control" unique_id=1009167820]
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/Control" unique_id=428315723]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -275.0
 offset_top = -48.0
-grow_horizontal = 0
+grow_horizontal = 2
 grow_vertical = 0
+
+[node name="NextSector" type="Button" parent="BG/Control/HBoxContainer" unique_id=650434021]
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("1_0pnxq")
+text = "CONTINUE THIS DIVE"
+flat = true
+
+[node name="ReturnToCity" type="Button" parent="BG/Control/HBoxContainer" unique_id=1009167820]
+layout_mode = 2
+size_flags_horizontal = 10
 theme = ExtResource("1_0pnxq")
 text = "RETURN TO THE CITY"
 flat = true
 
-[node name="NextSector" type="Button" parent="BG/Control" unique_id=650434021]
+[node name="Panel" type="Panel" parent="BG" unique_id=1929294004]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -48.0
-offset_right = 275.0
-grow_vertical = 0
-theme = ExtResource("1_0pnxq")
-text = "CONTINUE THIS DIVE"
-flat = true
+offset_left = 144.0
+offset_top = 108.0
+offset_right = -144.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/Panel" unique_id=1480388423]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1373755379]
+layout_mode = 2
+
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer" unique_id=1746357207]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "Enemies Killed:"
+
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer" unique_id=777889781]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+text = "0"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1827068489]
+layout_mode = 2
+
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer2" unique_id=358603982]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "Enemies Killed:"
+
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer2" unique_id=611510418]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+text = "0"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1646471745]
+layout_mode = 2
+
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer3" unique_id=1930508438]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "Enemies Killed:"
+
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer3" unique_id=1470780625]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+text = "0"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1651458801]
+layout_mode = 2
+
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer4" unique_id=1618250077]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "Enemies Killed:"
+
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer4" unique_id=720374815]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+text = "0"
+
+[connection signal="pressed" from="BG/Control/HBoxContainer/NextSector" to="." method="_on_next_sector_pressed"]

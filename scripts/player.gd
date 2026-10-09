@@ -5,11 +5,21 @@ const SPEED = 30.0
 
 
 func _physics_process(_delta: float) -> void:
-	var inputX :float= Input.get_axis("ui_left", "ui_right")
-	var inputY :float= Input.get_axis("ui_up", "ui_down")
+	if get_local_mouse_position().x > to_local(position).x:
+		$VisualContainer.scale.x = 1
+	if get_local_mouse_position().x < to_local(position).x:
+		$VisualContainer.scale.x = -1
+	
+	var inputX :float= Input.get_axis("plr_move_left", "plr_move_right")
+	var inputY :float= Input.get_axis("plr_move_up", "plr_move_down")
+	
 	
 	var inputAxis = [inputX,inputY]
 	if inputAxis[0] == 0 && inputAxis[1] == 0:
+		var s = ($VisualContainer/AnimationTree.get("parameters/moving?/blend_amount") * .65)
+		if s <= .1:
+			s = 0
+		$VisualContainer/AnimationTree.set("parameters/moving?/blend_amount", s)
 		return
 	
 	var axis = sqrt(inputAxis[0]*inputAxis[0] + inputAxis[1]*inputAxis[1])
@@ -72,9 +82,12 @@ func _physics_process(_delta: float) -> void:
 			
 	
 	
-	"""if movement.x > 0:
-		$Sprite.flip_h = false
-	if movement.x < 0:
-		$Sprite.flip_h = true"""
 	velocity = movement
+	if velocity != Vector2(0,0):
+		var s = ($VisualContainer/AnimationTree.get("parameters/moving?/blend_amount") / .8)
+		if s == 0:
+			s = .1
+		if s >= 1:
+			s = 1
+		$VisualContainer/AnimationTree.set("parameters/moving?/blend_amount", 1)
 	move_and_slide()
