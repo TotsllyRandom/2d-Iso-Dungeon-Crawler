@@ -3,11 +3,19 @@ extends CharacterBody2D
 
 const SPEED = 30.0
 
+@onready var armL = $"VisualContainer/Skeleton2D/hip/torso/left shoulder/left arm"
+@onready var armR = $"VisualContainer/Skeleton2D/hip/torso/right shoulder/right arm"
+
+@onready var anim_tree: AnimationTree = $VisualContainer/AnimationTree
+
+func _ready() -> void:
+	anim_tree.mixer_applied.connect(_aim_arm)
 
 func _physics_process(_delta: float) -> void:
-	if get_local_mouse_position().x > to_local(position).x:
+	var mouse_pos = get_local_mouse_position()
+	if mouse_pos.x > to_local(position).x:
 		$VisualContainer.scale.x = 1
-	if get_local_mouse_position().x < to_local(position).x:
+	if mouse_pos.x < to_local(position).x:
 		$VisualContainer.scale.x = -1
 	
 	var inputX :float= Input.get_axis("plr_move_left", "plr_move_right")
@@ -91,3 +99,18 @@ func _physics_process(_delta: float) -> void:
 			s = 1
 		$VisualContainer/AnimationTree.set("parameters/moving?/blend_amount", 1)
 	move_and_slide()
+	
+func _aim_arm() -> void:
+	var mouse_pos = get_global_mouse_position()
+	var facing_right = mouse_pos.x >= global_position.x
+
+	$VisualContainer.scale.x = 1 if facing_right else -1
+
+	var arm: Bone2D = armR if facing_right else armL
+
+	# Convert the mouse position into the arm parent's coordinate space.
+	var parent := arm.get_parent() as Node2D
+	var target_pos := parent.to_local(mouse_pos)
+
+	# Override only the aiming arm's rotation.
+	arm.rotation = (target_pos - arm.position).angle() - PI / 2

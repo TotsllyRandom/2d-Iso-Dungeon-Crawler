@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://gaaugntt7qfh" path="res://scripts/tilemap.gd" id="1_lt7kh"]
 [ext_resource type="TileSet" uid="uid://bcm2jywnxg0cr" path="res://Assets/Resources/TestTileSet.tres" id="1_oavya"]
-[ext_resource type="PackedScene" uid="uid://4erouy7s8j5q" path="res://Scenes/character_body_2d.tscn" id="2_dakn4"]
+[ext_resource type="PackedScene" uid="uid://4erouy7s8j5q" path="res://Scenes/player.tscn" id="2_dakn4"]
 
 [node name="Dungeon" type="Node2D" unique_id=1384526358]
 script = ExtResource("1_lt7kh")
