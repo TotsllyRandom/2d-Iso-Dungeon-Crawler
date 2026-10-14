@@ -1,0 +1,51 @@
+[gd_scene format=4 uid="uid://y20ybyittj1o"]
+
+[ext_resource type="Script" uid="uid://cqqmymup86t0r" path="res://Scenes/tile.gd" id="1_xsjyq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cjkyl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77b1u"]
+albedo_color = Color(0.2574758, 0.25747576, 0.25747573, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eej74"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pippx"]
+resource_name = "TileTest_Cube_004"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_77b1u"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_eej74")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cjkyl"]
+size = Vector3(2, 2, 2)
+
+[node name="Tile" type="StaticBody3D" unique_id=914008294]
+physics_material_override = SubResource("PhysicsMaterial_cjkyl")
+script = ExtResource("1_xsjyq")
+
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1336655862]
+mesh = SubResource("ArrayMesh_pippx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=931771427]
+shape = SubResource("BoxShape3D_cjkyl")

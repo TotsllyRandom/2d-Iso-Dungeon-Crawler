@@ -1,5 +1,6 @@
-extends Node2D
+extends Node3D
 
+var tile_scene = load("res://Scenes/tile.tscn")
 
 var size = 5
 var tilemap = []
@@ -23,17 +24,12 @@ func _process(_delta: float) -> void:
 	
 		if error != OK:
 			print("Failed to load scene: ", error)
-	$ColorRect.size = get_viewport_rect().size
-	$ColorRect.position = $Player.position
-	$ColorRect.position = Vector2(
-		$ColorRect.position.x - $ColorRect.size.x/2,
-		$ColorRect.position.y - $ColorRect.size.y/2
-	)
 
 
 func make_tile_map():
 	print("Making Tilemap:\n")
-	$Ground.clear()
+	for child in $Ground.get_children():
+		child.queue_free()
 	rooms.clear()
 	tilemap.clear()
 	fill_rooms.clear()
@@ -123,43 +119,10 @@ func make_tile_map():
 				continue
 			
 			if not str(tilemap[y][x]) == "W":
-				$Ground.set_cell(Vector2i(x,y),0,Vector2i(int(tilemap[y][x]),0))
-			else:
-				for ay in range(-1,2):
-					for ax in range(-1,2):
-						if (abs(ax) + abs(ay) == 1):
-							var a := []
-							
-							if x != 0:
-								a.append(tilemap[y][x-1])
-							
-							if x != lx:
-								a.append(tilemap[y][x+1])
-							
-							if y != 0:
-								a.append(tilemap[y-1][x])
-							
-							if y != ly:
-								a.append(tilemap[y+1][x])
-							
-							var item = 0
-							
-							while (item < len(a)):
-								if str(a[item]) == "W" or str(a[item]) == " ":
-									a.pop_at(item)
-									item -= 1
-								
-								item += 1
-							
-							if len(a) == 0:
-								a.append(1)
-							
-							$Ground.set_cell(Vector2i(x,y),1,Vector2i(int(a[0]),0))
+				var new = tile_scene.instantiate()
+				new.pos = Vector3i(x*2,0,y*2)
+				$Ground.add_child(new)
 					
-	$Player.position = $Ground.map_to_local(Vector2i(
-		(-mi.x * 9) + 4,
-		(-mi.y * 9) + 4
-	))
 
 
 func find_room_by_cord(x:int,y:int) -> int:

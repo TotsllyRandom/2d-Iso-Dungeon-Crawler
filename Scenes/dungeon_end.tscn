@@ -79,61 +79,91 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1373755379]
+[node name="#Enemies Killed" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1373755379]
 layout_mode = 2
 
-[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer" unique_id=1746357207]
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/#Enemies Killed" unique_id=1746357207]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
 text = "Enemies Killed:"
 
-[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer" unique_id=777889781]
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/#Enemies Killed" unique_id=777889781]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
 text = "0"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1827068489]
+[node name="Death Mult" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1827068489]
 layout_mode = 2
 
-[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer2" unique_id=358603982]
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/Death Mult" unique_id=358603982]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
-text = "Enemies Killed:"
+text = "Enemy Death Multiplier:"
 
-[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer2" unique_id=611510418]
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/Death Mult" unique_id=611510418]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+text = "1x"
+
+[node name="Chests Opened" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1646471745]
+layout_mode = 2
+
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/Chests Opened" unique_id=1930508438]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "Chests Opened:"
+
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/Chests Opened" unique_id=1470780625]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
 text = "0"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1646471745]
+[node name="Stage Mult" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1651458801]
 layout_mode = 2
 
-[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer3" unique_id=1930508438]
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/Stage Mult" unique_id=1618250077]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
-text = "Enemies Killed:"
+text = "Stage Multiplier"
 
-[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer3" unique_id=1470780625]
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/Stage Mult" unique_id=720374815]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
-text = "0"
+text = "1x"
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1651458801]
+[node name="Blank" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=318020851]
 layout_mode = 2
 
-[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer4" unique_id=1618250077]
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/Blank" unique_id=842530877]
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_vertical = 3
-text = "Enemies Killed:"
+text = " "
 
-[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/HBoxContainer4" unique_id=720374815]
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/Blank" unique_id=1200171859]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+text = " "
+
+[node name="Total" type="HBoxContainer" parent="BG/Panel/VBoxContainer" unique_id=1230112747]
+layout_mode = 2
+
+[node name="Item" type="Label" parent="BG/Panel/VBoxContainer/Total" unique_id=1927980361]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+text = "Total EXP gained"
+
+[node name="Value" type="Label" parent="BG/Panel/VBoxContainer/Total" unique_id=233570265]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
